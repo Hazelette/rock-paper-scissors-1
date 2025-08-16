@@ -8,9 +8,7 @@ function getComputerChoice(){
     return choices[randomIndex]; // return random choice from array
     // using array is cleaner than using if-else statements
 }
-
-const computerChoice = getComputerChoice(); // call the function and store the result
-console.log(computerChoice); // test the function to ensure all 3 string are randomly selected
+console.log(getComputerChoice()); // test the function to ensure all 3 string are randomly selected
 
 // function to get user's choice
 function getHumanChoice(){
@@ -22,5 +20,4 @@ function getHumanChoice(){
     }
     return humanChoice; // return valid choice
 }
-const humanChoice = getHumanChoice(); // call the function and store the result
-console.log(humanChoice); // test the function to ensure all 3 string are randomly selected
+console.log(getHumanChoice); // test the function to ensure all 3 string are randomly selected
