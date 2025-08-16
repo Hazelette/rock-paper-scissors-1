@@ -1,0 +1,1 @@
+console.log("Test"); // ensures script is loaded
