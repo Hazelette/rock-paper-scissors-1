@@ -11,3 +11,16 @@ function getComputerChoice(){
 
 const computerChoice = getComputerChoice(); // call the function and store the result
 console.log(computerChoice); // test the function to ensure all 3 string are randomly selected
+
+// function to get user's choice
+function getHumanChoice(){
+    // prompt user for input
+    let humanChoice = prompt("Enter your choice: rock, paper, or scissors").toLowerCase(); // convert input to lowercase
+    // validate input, ask for input until valid. change to lower case to ensure case insensitivity
+    while (!["rock", "paper", "scissors"].includes(humanChoice)) {
+        humanChoice = prompt("Invalid choice. Please enter rock, paper, or scissors:").toLowerCase();
+    }
+    return humanChoice; // return valid choice
+}
+const humanChoice = getHumanChoice(); // call the function and store the result
+console.log(humanChoice); // test the function to ensure all 3 string are randomly selected
