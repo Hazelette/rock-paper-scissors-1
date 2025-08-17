@@ -8,7 +8,7 @@ function getComputerChoice(){
     return choices[randomIndex]; // return random choice from array
     // using array is cleaner than using if-else statements
 }
-console.log(getComputerChoice()); // test the function to ensure all 3 string are randomly selected
+// console.log(getComputerChoice()); // test the function to ensure all 3 string are randomly selected
 
 // function to get user's choice
 function getHumanChoice(){
@@ -20,4 +20,33 @@ function getHumanChoice(){
     }
     return humanChoice; // return valid choice
 }
-console.log(getHumanChoice); // test the function to ensure all 3 string are randomly selected
+// console.log(getHumanChoice()); // test the function to ensure all 3 string are randomly selected
+
+// Variable to store the scores
+let humanScore = 0;
+let computerScore = 0;
+
+// function to play a single round of the game
+function playRound(humanChoice, computerChoice){
+    // check if humanChoice is equal to computerChoice
+    if (humanChoice === computerChoice) {
+        return "It's a tie!"; // return tie message
+    }
+    // check if humanChoice beats computerChoice
+    else if (
+        (humanChoice === "rock" && computerChoice === "scissors") ||
+        (humanChoice === "paper" && computerChoice === "rock") ||
+        (humanChoice === "scissors" && computerChoice === "paper" )
+     ) {
+        humanScore++; // increment human score
+        return `You win! ${humanChoice} beats ${computerChoice}.`; // return win message
+        
+    }
+    else {
+        computerScore++; // increment computer score
+        return `You lose! ${computerChoice} beats ${humanChoice}.`; // return lose message
+ 
+    }
+        
+}
+console.log(playRound(getHumanChoice(), getComputerChoice())); // test the function to ensure it works
