@@ -1,4 +1,3 @@
-// console.log("Test"); // ensures script is loaded
 
 // function to get computer's choice
 function getComputerChoice(){
@@ -8,7 +7,6 @@ function getComputerChoice(){
     return choices[randomIndex]; // return random choice from array
     // using array is cleaner than using if-else statements
 }
-// console.log(getComputerChoice()); // test the function to ensure all 3 string are randomly selected
 
 // function to get user's choice
 function getHumanChoice(){
@@ -20,7 +18,6 @@ function getHumanChoice(){
     }
     return humanChoice; // return valid choice
 }
-// console.log(getHumanChoice()); // test the function to ensure all 3 string are randomly selected
 
 // Variable to store the scores
 let humanScore = 0;
