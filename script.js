@@ -19,31 +19,47 @@ function getHumanChoice(){
     return humanChoice; // return valid choice
 }
 
-// Variable to store the scores
-let humanScore = 0;
-let computerScore = 0;
+// console.log(playRound(getHumanChoice(), getComputerChoice())); // test the function to ensure it works
 
-// function to play a single round of the game
-function playRound(humanChoice, computerChoice){
-    // check if humanChoice is equal to computerChoice
-    if (humanChoice === computerChoice) {
-        return "It's a tie!"; // return tie message
+function playGame() {
+    // Variable to store the scores
+    let humanScore = 0;
+    let computerScore = 0;
+
+    // function to play a single round of the game
+    function playRound(humanChoice, computerChoice){
+        // check if humanChoice is equal to computerChoice
+        if (humanChoice === computerChoice) {
+            return "It's a tie!"; // return tie message
+        }
+        // check if humanChoice beats computerChoice
+        else if (
+            (humanChoice === "rock" && computerChoice === "scissors") ||
+            (humanChoice === "paper" && computerChoice === "rock") ||
+            (humanChoice === "scissors" && computerChoice === "paper" )
+        ) {
+            humanScore++; // increment human score
+            return `You win! ${humanChoice} beats ${computerChoice}.`; // return win message
+            
+        }
+        else {
+            computerScore++; // increment computer score
+            return `You lose! ${computerChoice} beats ${humanChoice}.`; // return lose message
+    
+        }
+            
     }
-    // check if humanChoice beats computerChoice
-    else if (
-        (humanChoice === "rock" && computerChoice === "scissors") ||
-        (humanChoice === "paper" && computerChoice === "rock") ||
-        (humanChoice === "scissors" && computerChoice === "paper" )
-     ) {
-        humanScore++; // increment human score
-        return `You win! ${humanChoice} beats ${computerChoice}.`; // return win message
-        
+    // Loop to play 5 rounds
+    for (let i = 0; i < 5; i++) {
+        const humanChoice = getHumanChoice(); // get human choice
+        const computerChoice = getComputerChoice(); // get computer choice
+        console.log(playRound(humanChoice, computerChoice)); // play round and log result
+        console.log("Current Scores: You - " + humanScore + ", Computer - " + computerScore); // log current scores
     }
-    else {
-        computerScore++; // increment computer score
-        return `You lose! ${computerChoice} beats ${humanChoice}.`; // return lose message
- 
-    }
-        
+
+    // Display final scores
+    console.log(`Final Scores: You - ${humanScore}, Computer - ${computerScore}`);
 }
-console.log(playRound(getHumanChoice(), getComputerChoice())); // test the function to ensure it works
+
+// Call the function to start the game
+playGame();
