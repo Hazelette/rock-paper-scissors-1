@@ -19,18 +19,14 @@ function getHumanChoice(){
     return humanChoice; // return valid choice
 }
 
-// console.log(playRound(getHumanChoice(), getComputerChoice())); // test the function to ensure it works
-
 function playGame() {
-    // Variable to store the scores
     let humanScore = 0;
     let computerScore = 0;
 
     // function to play a single round of the game
     function playRound(humanChoice, computerChoice){
-        // check if humanChoice is equal to computerChoice
         if (humanChoice === computerChoice) {
-            return "It's a tie!"; // return tie message
+            return "It's a tie!"; 
         }
         // check if humanChoice beats computerChoice
         else if (
@@ -38,12 +34,12 @@ function playGame() {
             (humanChoice === "paper" && computerChoice === "rock") ||
             (humanChoice === "scissors" && computerChoice === "paper" )
         ) {
-            humanScore++; // increment human score
+            humanScore++; 
             return `You win! ${humanChoice} beats ${computerChoice}.`; // return win message
             
         }
         else {
-            computerScore++; // increment computer score
+            computerScore++; 
             return `You lose! ${computerChoice} beats ${humanChoice}.`; // return lose message
     
         }
