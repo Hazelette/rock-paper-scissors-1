@@ -54,7 +54,7 @@ function playGame() {
         const humanChoice = getHumanChoice(); // get human choice
         const computerChoice = getComputerChoice(); // get computer choice
         console.log(playRound(humanChoice, computerChoice)); // play round and log result
-        console.log("Current Scores: You - " + humanScore + ", Computer - " + computerScore); // log current scores
+        console.log(`Current Scores: You -  ${humanScore}, Computer - ${computerScore}`); // log current scores
     }
 
     // Display final scores
